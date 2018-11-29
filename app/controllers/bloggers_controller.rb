@@ -18,6 +18,7 @@ class BloggersController < ApplicationController
       @blogger.save
       redirect_to blogger_path(@blogger)
     else
+      flash[:errors] = @blogger.errors.full_messages
       render :new
     end
   end

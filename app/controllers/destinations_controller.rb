@@ -13,13 +13,7 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @destination = Destination.create(destination_params(:name, :age, :bio))
-    if @destination.valid?
-      @destination.save
-      redirect_to destination_path(@destination)
-    else
-      render :new
-    end
+  
   end
 
   private
