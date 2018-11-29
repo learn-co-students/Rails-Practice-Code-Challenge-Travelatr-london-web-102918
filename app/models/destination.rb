@@ -11,6 +11,10 @@ class Destination < ApplicationRecord
   end
 
   def featured_post
-    self.posts.sort_by {|post| post.likes}.first
+    if self.posts.count != 0
+      self.posts.sort_by {|post| post.likes}.first.title
+    else
+      "Destination has no Posts yet!"
+    end
   end
 end

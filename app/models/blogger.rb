@@ -7,6 +7,10 @@ class Blogger < ApplicationRecord
   validates :bio, length: {:minimum => 30}
 
   def featured_post
-    self.posts.sort_by {|post| post.likes}.first
+    if self.posts.count != 0
+      self.posts.sort_by {|post| post.likes}.first.title
+    else
+      "Blogger has no Posts yet!"
+    end
   end
 end
