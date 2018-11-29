@@ -1,0 +1,12 @@
+<h1>Destination Profile</h1>
+Name: <%= @destination.name %><br>
+Country: <%= @destination.country %><br>
+Average Age of Blogger: <%= @destination.average_age %><br>
+Featured Post: <%= @destination.featured_post.title %><br>
+<hr>
+
+Posts:<br>
+<% @destination.latest_5_posts.each do|p| %>
+  <p>Title: <%= p.title %> </p>
+  <p>Likes: <%= p.likes %></p>
+  <% end %>

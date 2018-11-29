@@ -1,0 +1,7 @@
+<h1>Post</h1>
+Name: <%= @post.title %><br>
+Content: <%= @post.content %><br>
+Blogger: <%= link_to @post.blogger.name, blogger_path(@post.blogger)%><br>
+Destination: <%= link_to @post.destination.name, destination_path(@post.destination) %><br>
+
+<%= link_to "Like", post_like_post_path(@post), method: :patch %> <%= @post.likes %>
